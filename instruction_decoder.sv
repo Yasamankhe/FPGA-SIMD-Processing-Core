@@ -72,7 +72,7 @@ assign valid_instruction = valid_opcode && valid_func;
 // control signals
 
 assign ALUop = valid_instruction ? func : 3'b000;
-C:/Users/User/AppData/Local/quartus/instruction_decoder.sv
+
 
 // A valid ALU instruction writes its result back to the reg
 
