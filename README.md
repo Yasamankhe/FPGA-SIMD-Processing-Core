@@ -29,17 +29,17 @@ Only one opcode is actually used at the moment - 000, meaning "this is an ALU in
 
 ## The modules
 
-**alu.sv** - just a combinational 16-bit ALU, takes two operands and a 3-bit op code, does ADD/SUB/AND/OR.
+**alu.sv** :just a combinational 16-bit ALU, takes two operands and a 3-bit op code, does ADD/SUB/AND/OR.
 
-**regfile.sv** - eight 16-bit registers, two combinational reads, one synchronous write, register 0 hardwired to zero like you'd expect.
+**regfile.sv** : eight 16-bit registers, two combinational reads, one synchronous write, register 0 hardwired to zero like you'd expect.
 
-**instruction_decoder.sv** - takes the raw 16-bit instruction and splits it into the fields everything else needs (read addresses, write address, ALU op, whether it's SIMD, write enable, and a valid bit). It doesn't do any actual math, just figures out what should happen and flags instructions it doesn't recognize.
+**instruction_decoder.sv** :takes the raw 16-bit instruction and splits it into the fields everything else needs (read addresses, write address, ALU op, whether it's SIMD, write enable, and a valid bit). It doesn't do any actual math, just figures out what should happen and flags instructions it doesn't recognize.
 
-**program_counter.sv** - dead simple 8-bit counter, resets to zero, increments by one every clock edge. No branching or jumps yet - everything just runs in sequence for now.
+**program_counter.sv** : dead simple 8-bit counter, resets to zero, increments by one every clock edge. No branching or jumps yet - everything just runs in sequence for now.
 
-**instruction_memory.sv** - 256 slots, 16 bits each, addressed directly by the PC. I'm feeding it a small hand-written test program while I bring the rest of the processor up.
+**instruction_memory.sv** : 256 slots, 16 bits each, addressed directly by the PC. I'm feeding it a small hand-written test program while I bring the rest of the processor up.
 
-**processor_top.sv** - where all of the above actually gets wired together into one scalar pipeline.
+**processor_top.sv** : where all of the above actually gets wired together into one scalar pipeline.
 
 ## The SIMD side
 
