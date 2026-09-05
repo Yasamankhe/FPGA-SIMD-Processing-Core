@@ -24,10 +24,7 @@ The SIMD unit is going to sit next to the scalar ALU rather than replace it, and
 
 ## Instruction format
 
-I landed on this for now, though I wouldn't be surprised if it changes again:
-
-Bit 15 is a SIMD flag, bits 14-12 are the opcode, 11-9 is the destination register, 8-6 and 5-3 are the two source registers, and the bottom 3 bits pick the function.
-
+This is what I have now but it might change again:
 Only one opcode is actually used at the moment - 000, meaning "this is an ALU instruction." Everything else is unused for now, probably load/store or branching later. The function bits are 000 ADD, 001 SUB, 010 AND, 011 OR, and whether that runs as scalar or SIMD depends entirely on the SIMD flag bit. So the same 3-bit function code means two different things depending on that one bit - scalar ADD vs SIMD ADD, for example.
 
 ## The modules
