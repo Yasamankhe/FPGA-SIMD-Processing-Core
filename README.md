@@ -2,7 +2,7 @@
 
 I've been building a small 16-bit processor in SystemVerilog, mostly to get more comfortable with RTL design, processor architecture, and verification. It's not finished, and honestly the plan has already shifted a couple of times as I've gone.
 
-I started with the basic scalar pieces on their own - ALU, register file, instruction decoder, program counter - and I'm now wiring those together while also adding a 4-lane SIMD unit on the side. The core idea is that the same processor should be able to run normal 16-bit scalar instructions, or split a register into four smaller lanes and do the same operation on all of them at once.
+I started with the basic scalar pieces on their own: ALU, register file, instruction decoder, program counter, and I'm now wiring those together while also adding a 4-lane SIMD unit on the side. The core idea is that the same processor should be able to run normal 16-bit scalar instructions, or split a register into four smaller lanes and do the same operation on all of them at once.
 
 ## Where things stand right now
 
