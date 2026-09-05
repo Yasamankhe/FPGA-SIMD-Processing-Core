@@ -61,7 +61,6 @@ After that, the SIMD lane and unit need to get built and tested (each op, plus t
 
 Verification-wise I want a proper processor-level testbench with full instruction sequences and some randomized operand testing, not just my current one-block-at-a-time approach.
 
-Further out, I want to actually synthesize this in Vivado and see what it looks like in terms of LUT/flip-flop usage and max clock frequency, and then run some kind of real workload through both the scalar and SIMD paths just to see what the actual speedup looks like and whether it's worth the area it costs.
 
 ## Repo layout
 
