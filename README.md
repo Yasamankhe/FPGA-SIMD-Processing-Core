@@ -8,7 +8,7 @@ I started with the basic scalar pieces on their own: ALU, register file, instruc
 
 16-bit datapath, 8 general-purpose registers, two read ports and one write port on the register file, an 8-bit program counter, and 16-bit instructions. Right now the ALU only does ADD, SUB, AND, and OR, and there's a bit in the instruction that picks between running that as a normal scalar op or as a SIMD op across four 4-bit lanes.
 
-Scalar path right now looks roughly like this - PC feeds instruction memory, that goes to the decoder, the decoder tells the register file and control logic what to do, the register file hands operands to the ALU, and the ALU result gets written back:
+Scalar path right now looks roughly like this : PC feeds instruction memory, that goes to the decoder, the decoder tells the register file and control logic what to do, the register file hands operands to the ALU, and the ALU result gets written back:
 
 ```
 Program Counter -> Instruction Memory -> Instruction Decoder
@@ -55,7 +55,7 @@ Right now I'm still eyeballing a lot of this through waveforms, which works but 
 
 ## What's left
 
-The scalar side is basically done at the block level - ALU, register file, decoder, PC, and instruction memory all exist and have been simulated individually. What's not done yet is actually wiring the full scalar datapath together and running a real program through it end to end.
+The scalar side is basically done at the block level :ALU, register file, decoder, PC, and instruction memory all exist and have been simulated individually. What's not done yet is actually wiring the full scalar datapath together and running a real program through it end to end.
 
 After that, the SIMD lane and unit need to get built and tested (each op, plus the overflow/wraparound edge cases), then connected into the top-level design with the scalar/SIMD selection logic.
 
